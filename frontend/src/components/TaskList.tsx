@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchTasks } from '../store/slices/taskSlice';
-import { RootState, AppDispatch } from '../store';
+import type { RootState, AppDispatch } from '../store';
 import TaskItem from './TaskItem';
 
 const TaskList: React.FC = () => {

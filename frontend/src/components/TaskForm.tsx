@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addTask } from '../store/slices/taskSlice';
-import { AppDispatch } from '../store';
-import { taskSchema, Task } from '../schemas/taskSchema';
+import type { AppDispatch } from '../store';
+import { taskSchema } from '../schemas/taskSchema';
+import type { Task } from '../schemas/taskSchema';
 
 const TaskForm: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -25,7 +26,7 @@ const TaskForm: React.FC = () => {
     const validation = taskSchema.safeParse(formData);
 
     if (!validation.success) {
-      setError(validation.error.errors[0].message);
+      setError(validation.error.issues[0].message);
       return;
     }
 

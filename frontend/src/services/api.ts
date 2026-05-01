@@ -1,5 +1,6 @@
 import axios from "axios";
-import { Task, taskSchema } from "../schemas/taskSchema";
+import { taskSchema } from "../schemas/taskSchema";
+import type { Task } from "../schemas/taskSchema";
 
 const api = axios.create({
   baseURL: "http://localhost:8000/api",

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Task } from '../schemas/taskSchema';
+import type { Task } from '../schemas/taskSchema';
 import { useDispatch } from 'react-redux';
 import { deleteTask, updateTask } from '../store/slices/taskSlice';
-import { AppDispatch } from '../store';
+import type { AppDispatch } from '../store';
 
 interface TaskItemProps {
   task: Task;
